@@ -1,0 +1,81 @@
+pipeline {
+    
+    agent any
+    tools {
+        maven 'maven'
+    }
+    stages {
+        
+        stage("validate") {
+            
+            steps {
+                echo "validateing the code"
+                bat "mvn validate"
+            }
+        }
+        
+        stage("compile") {
+            
+            steps {
+                echo "compileing the code"
+                bat "mvn compile"
+            }
+        }
+        
+        stage("test") {
+            
+            steps {
+                echo "testing the code"
+                bat "mvn test"
+            }
+        }
+        
+        stage("package") {
+            
+            steps {
+                echo "packageing the code"
+                bat "mvn package"
+            }
+        }
+        
+        stage("verify") {
+            
+            steps {
+                echo "verifying the code"
+                bat "mvn verify"
+            }
+        }
+        
+        stage("install") {
+            
+            steps {
+                echo "installing the code"
+                bat "mvn install"
+            }
+        }
+        
+        stage("deploy") {
+            
+            steps {
+                echo "deploying the code"
+                //bat "mvn deploy"
+            }
+        }
+        
+        stage("clean") {
+            
+            steps {
+                echo "cleaning the code"
+                bat "mvn clean"
+            }
+        }
+        
+        stage("site") {
+            
+            steps {
+                echo "deploying the code"
+                bat "mvn site"
+            }
+        }
+    }
+}
