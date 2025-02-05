@@ -9,7 +9,7 @@ pipeline {
         stage("validate") {
             
             steps {
-                echo "validateing the code"
+                //echo "validateing the code"
                 bat "mvn validate"
             }
         }
