@@ -10,7 +10,7 @@ pipeline {
             
             steps {
                 echo "validateing the code"
-                bat "mvn validate"
+                sh "mvn validate"
             }
         }
         
